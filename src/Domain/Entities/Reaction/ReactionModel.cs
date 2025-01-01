@@ -1,6 +1,6 @@
-namespace Domain.Entities;
+namespace Domain.Entities.Reaction;
 
-public class Reaction
+public class ReactionModel
 {
     public int Id { get; set; }
     
@@ -8,5 +8,5 @@ public class Reaction
     
     public int PersonId { get; set; }
     
-    public int Type { get; set; }
+    public int TypeId { get; set; }
 }

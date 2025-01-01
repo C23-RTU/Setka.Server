@@ -1,6 +1,6 @@
-namespace Domain.Entities;
+namespace Domain.Entities.Person;
 
-public class Person
+public class PersonModel
 {
     public int Id { get; set; }
     

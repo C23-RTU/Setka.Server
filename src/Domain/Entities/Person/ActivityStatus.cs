@@ -1,6 +1,6 @@
-namespace Domain.Entities;
+namespace Domain.Entities.Person;
 
-public class Role
+public class ActivityStatus
 {
     public int Id { get; set; }
     

@@ -1,6 +1,6 @@
-namespace Domain.Entities;
+namespace Domain.Entities.Club;
 
-public class Club
+public class ClubModel
 {
     public int Id { get; set; }
     

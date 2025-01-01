@@ -1,10 +1,12 @@
-namespace Domain.Entities;
+namespace Domain.Entities.Club;
 
-public class Persons_Clubs
+public class Administration
 {
     public int Id { get; set; }
     
     public int PersonId { get; set; }
     
     public int ClubId { get; set; }
+    
+    public int ClubRoleId { get; set; }
 }

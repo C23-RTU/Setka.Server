@@ -1,6 +1,6 @@
-namespace Domain.Entities;
+namespace Domain.Entities.Post;
 
-public class Post
+public class PostModel
 {
     public int Id { get; set; }
     
