@@ -1,8 +1,10 @@
 namespace Domain.Entities.Post;
 
-public class PostImages
+public class PostsImages
 {
     public int Id { get; set; }
+    
+    public int Index { get; set; }
     
     public int PostId { get; set; }
     
