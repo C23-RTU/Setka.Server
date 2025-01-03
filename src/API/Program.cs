@@ -1,4 +1,7 @@
+using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
+using Infrastructure.Persistence.Data;
+using Infrastructure.Identity.Data;
 
 namespace API;
 
@@ -9,6 +12,12 @@ public class Program
 		var builder = WebApplication.CreateBuilder(args);
 		builder.Services.AddEndpointsApiExplorer();
 		builder.Services.AddOpenApiDocument();
+		builder.Configuration.AddEnvironmentVariables();
+		builder.Services.AddDbContext<ApplicationDbContext>(options =>
+			options.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
+		builder.Services.AddDbContext<ApplicationIdentityDbContext>(options =>
+			options.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
+		builder.Services.AddControllers();
 		var app = builder.Build();
 		if (app.Environment.IsDevelopment())
 		{
@@ -22,6 +31,7 @@ public class Program
 			});
 		}
 		app.UseHttpsRedirection();
+		app.MapControllers();
 		app.Run();
 	}
 }
